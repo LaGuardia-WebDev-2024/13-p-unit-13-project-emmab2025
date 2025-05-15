@@ -1,12 +1,12 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[yes  ] Two Interactive Drop-down Inputs 
+[ yes ] Two Different jQuery Animation Methods 
+[  yes] Add Five CSS Declarations
+[ yes ] Include Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Google Font
+[ yes ] Feature 1 - Google Font
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
 [ no ] Feature 4 - :hover Feature 
@@ -16,71 +16,175 @@ Select ONE Additional Feature to Add
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+}
+</style>
+    <meta
+          charset="utf-8" />
     <title>Unit 13 Project</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+  </head> 
+  
   <body>
-    <h1>Quiz About [Me]</h1>
-    <hr />
+    <h1>Quiz About Emma!💞</h1>
+
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        🎥 What is my favorite movie/ Movie Series?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">The NoteBook</option>
+          <option value="movie2">The After Series</option>
+          <option value="movie3">TVD Series</option>
+          <option value="movie4">Tell Me Lies</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
     </form>
     <div id="movie-result"></div>
-    <hr />
+    <img
+      src="https://artworks.thetvdb.com/banners/v4/series/393269/posters/66bff78fe6d54.jpg"
+      width="220"
+    />
+    <img
+      src="https://th.bing.com/th/id/OIP.twz4tiIJL6LEe1yPtpgGoAHaE8?w=257&h=180&c=7&r=0&o=7&cb=iwp2&pid=1.7&rm=3"
+      width="230"
+    />
+    <img
+      src="https://poptechculture.com/wp-content/uploads/2023/05/What-is-The-Correct-Sequence-to-Watch-the-After-Movies-4.jpg"
+      width="250"
+    />
+    <img
+      src="https://static2.srcdn.com/wordpress/wp-content/uploads/2019/12/VampireDiaries.jpg"
+      width="300"
+    />
+    <form id="Genre-form">
+      <label>
+        ❔ What Is My Preffered Genres❔
+        <select id="Genre-answer">
+          <option value="Genre1">Romantic</option>
+          <option value="Genre2">Mystery</option>
+          <option value="Genre3">Action</option>
+        </select>
+      </label>
+      <button type="submit">Check Genre Answer</button>
+      <div id="Genre-result"></div>
+
+      <img
+        src="https://th.bing.com/th/id/OIP.j2z4YWYwiM5QZzIvtAZOGwHaHa?cb=iwp2&rs=1&pid=ImgDetMain"
+        width="300"
+      />
+      <img
+        src="https://images.ctfassets.net/3s5io6mnxfqz/5yaU9R8CfN7H3IFwlpjINO/41882ddd6ce99df47e11434a03ee6271/AdobeStock_138391201.jpeg?w=1920"
+        width="300"
+      />
+      <img
+        src="https://cdn.slidesharecdn.com/ss_thumbnails/genrenew-120430081506-phpapp01-thumbnail-4.jpg?cb=1335773773"
+        width="300"
+      />
+    </form>
+
     <!-- Book Question -->
     <form id="book-form">
       <label>
         📖 What is my favorite book?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">The Love Hypothesis</option>
+          <option value="book2">In Five Years</option>
+          <option value="book3">It Ends With Us</option>
+          <option value="book4">Little Fires Everywhere</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
     <div id="book-result"></div>
+    <img
+      src="https://images.squarespace-cdn.com/content/v1/60332279321c6f6cc87cf8fe/1615171676411-RDV704DHU0GUWTADQDUY/Little+Fires+Everywhere+Book+Cover"
+      width="250"
+    />
+    <img
+      src="https://th.bing.com/th/id/R.b5a7225f2d3cf38ee345cf5ba814c47a?rik=ruuPZGy4vDz15w&riu=http%3a%2f%2fstarcrossedbookblog.com%2fwp-content%2fuploads%2f2022%2f01%2flove-hypothesis.jpg&ehk=3tBjmwhTNPNNIgh1zYshL4KdnfNSklkdAwEVfgi27Is%3d&risl=&pid=ImgRaw&r=0"
+      width="230"
+    />
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/I/817vqET828L.jpg"
+      width="220"
+    />
+    <img
+      src="https://m.media-amazon.com/images/I/81YtGlXiWAL.jpg"
+      width="220"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
-        event.preventDefault();
+        //Movie Question jQuery Code
+        $("#movie-form").on("submit", function (event) {
+          event.preventDefault();
 
-        var $answer = $("#movie-answer");
-        var answer = $answer.val();
+          var $answer = $("#movie-answer");
+          var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
-        } else {
-          $("#movie-result").text("Try Again!");
-        }
-      });
+          if (answer === "movie1") {
+            $("#movie-result").text(
+              "YESSSS The Notebook is correct! Starring Rachel Mcadams and Ryan Gosling");
+          } else if(answer== "movie2"){
+            $("#movie-result").text(
+              "One of my favs but not Quite" );
+          }
+         else if (answer === "movie3") {
+            $("#movie-result").text(
+              "This is my favorite Tv show not movie" );
+          } else {
+            $("#movie-result").text(
+              "So close" );
+          }
+        });
+        //Genre Question jQuery Code
+        $("#Genre-form").on("submit", function (event) {
+          event.preventDefault();
 
-      //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
-        event.preventDefault();
+          var $answer = $("#Genre-answer");
+          var answer = $answer.val();
 
-        var $answer = $("#book-answer");
-        var answer = $answer.val();
+           if (answer === "Genre1") {
+            $("#Genre-result").text("YESSSSS!");
+          } else if (answer === "Genre2") {
+            $("#Genre-result").text("Try again");
+          } else {
+            $("#Genre-result").text("So close");
+          }
+        });
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
-        } else {
-          $("#book-result").text("Try Again!");
-        }
-      });
+        //Book Question jQuery Code
+        $("#book-form").on("submit", function (event) {
+          event.preventDefault();
+
+          var $answer = $("#book-answer");
+          var answer = $answer.val();
+
+          if (answer === "book1") {
+            $("#book-result").text("YESSSSS The Love Hypothesis! by ALI HAZELWOOD");
+          } else if (answer === "book3") {
+            $("#book-result").text("so closeee");
+          } else if (answer === "book4") {
+            $("#book-result").text("Almost");
+          } else {
+            $("#book-result").text("try again");}
+          });
+
+          $("img").hide()
+          $("img").slideDown(3000, function () {
+
+      $("h1").hide()
+
+          $("h1").fadeIn(2000);        
+
+
+
+        });
+     
     </script>
   </body>
 
